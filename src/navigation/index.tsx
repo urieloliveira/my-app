@@ -1,21 +1,17 @@
 import React from "react";
-import {
-  BottomTabNavigationOptions,
-  createBottomTabNavigator,
-} from "@react-navigation/bottom-tabs";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import ProfileScreen from "../screens/profile";
-import PostsScreen from "../screens/posts";
-import { SafeAreaView, Text, View } from "react-native";
 import ProfileHeader from "../components/profile-header";
 import theme from "../utils/theme";
+import PostStack from "./stack/post-stack";
+import { TabIcons } from "../components/tab-icons";
 
-type ButtomTabProps = {
+type BottomTabProps = {
   Profile: undefined;
   Posts: undefined;
 };
 
-const Tab = createBottomTabNavigator<ButtomTabProps>();
+const Tab = createBottomTabNavigator<BottomTabProps>();
 
 const BottomTab = (): React.ReactElement => {
   return (
@@ -38,29 +34,10 @@ const BottomTab = (): React.ReactElement => {
           headerShown: false,
         }}
         name="Posts"
-        component={PostsScreen}
+        component={PostStack}
       />
     </Tab.Navigator>
   );
-};
-
-const TabIcons = ({ focused, color, size }) => {
-  return {
-    Profile: (
-      <Ionicons
-        name={focused ? "ios-person" : "ios-person-outline"}
-        size={size}
-        color={color}
-      />
-    ),
-    Posts: (
-      <Ionicons
-        name={focused ? "ios-list" : "ios-list-outline"}
-        size={size}
-        color={color}
-      />
-    ),
-  };
 };
 
 export default BottomTab;

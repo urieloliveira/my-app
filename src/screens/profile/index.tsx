@@ -1,10 +1,11 @@
 import React from "react";
-import { View, Text, ScrollView } from "react-native";
+import { Text, ScrollView } from "react-native";
 import theme from "../../utils/theme";
+import CardVideo from "../../components/card-video";
 
-const Profile: React.FC = () => {
+const ProfileScreen: React.FC = () => {
   const videos = ["video1", "videos2", "video3"];
-  const reapeatVideos = [1, 2, 3, 4, 5];
+  const reapeatVideos = ["list1", "list2", "list3", "list4", "list5"];
   return (
     <ScrollView>
       <Text style={{ ...theme.typography.h6, margin: theme.spacing[6] }}>
@@ -22,16 +23,7 @@ const Profile: React.FC = () => {
           }}
         >
           {videos.map((video) => (
-            <View
-              key={video}
-              style={{
-                width: 240,
-                height: 200,
-                backgroundColor: theme.palette.grey[500],
-                borderRadius: theme.spacing[4],
-                marginRight: theme.spacing[4],
-              }}
-            />
+            <CardVideo key={video} />
           ))}
         </ScrollView>
       ))}
@@ -39,4 +31,4 @@ const Profile: React.FC = () => {
   );
 };
 
-export default Profile;
+export default ProfileScreen;

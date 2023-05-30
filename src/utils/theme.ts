@@ -1,10 +1,5 @@
 export default {
   palette: {
-    primary: {
-      main: "#343A40",
-      light: "#495057",
-      dark: "#212529",
-    },
     background: {
       default: "#fff",
     },
@@ -25,21 +20,6 @@ export default {
     },
   },
   typography: {
-    h1: {
-      fontSize: 48,
-    },
-    h2: {
-      fontSize: 42,
-    },
-    h3: {
-      fontSize: 36,
-    },
-    h4: {
-      fontSize: 32,
-    },
-    h5: {
-      fontSize: 28,
-    },
     h6: {
       fontSize: 24,
     },
